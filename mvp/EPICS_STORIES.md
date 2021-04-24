@@ -76,17 +76,25 @@ List of user stories:
 ##### RI-8: As a user, I want to have a visual guidance to my new match in separate screen after acceptance from both sides
     A great example of the implementation is Apple's new UX/UI approach of AirTag system. We need to follow the same guidelines
 ##### RI-9: As a user, I want to have a cheatsheet while moving towards my new match
+    Cheatsheet and Guidance should be switchable between each other, but still providing meaningful information to the user
 ##### RI-10: As a user, I want to end an active session on the phone
     The session is active if 2 phones are close to each to other, meaning the converstaion is still ongoing. The session can be expired by a)user's interaction or b) distance between 2 phones are far enough
 ##### RI-11: As a user, I want to review the conversation with my new match afterwards the session expiration
-    Need discussion with ML engineers 
+    Need discussion with ML engineers, UX/UI designers and basic research of what data sets are useful
 
 
-### *NBS-6: Communication Topics*
+### *NBS-6: Communication Topics aka Cheatsheet* 
 List of user stories:
-##### CT-1: As a user, I want to have topics devided into groups
-##### CT-2: As a user, I want to have a most-relevant sentence-hint below of each group
-##### CT-3: As a user, I want see a list of start-sentences after choosing a topic
+##### CT-1: As a user, I want to have communication topics in a separate screen
+##### CT-2: As a user, I want to have visual guidance to the match in the separate screen
+    Should be accopmpanied to RI-9
+##### CT-3: As a user, I want to have topics devided into groups
+##### CT-4: As a user, I want to have a most-relevant sentence-hint below of each group
+##### CT-5: As a user, I want see a list of start-sentences after choosing a specific topic
+##### CT-6: As a user, I want to leave a review for sentences used during a conversation with a match 
+    Same as RI-11
+    Need discussion with ML engineers, UX/UI designers and basic research of what data sets are useful
+
 
 
 ###### tags: `Nobis` `MVP`
