@@ -37,10 +37,37 @@ paths:
             description: A user with the specified ID was not found.
           '500':
             description: Unexpected error.
-
+  
   /api/tags/get/{userId}:
       get:
-        summary: Get vector for current tags by userId
+        summary: Get tags by userId
+        parameters:
+          - in: path
+            name: userId
+            schema:
+              type: string
+            required: true
+            description: Id of the user to get tags
+        operationId: getTags
+        responses:
+          '200':
+            description: Expected response to a valid request
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    type: string
+          '400':
+            description: Bad request. Invalid userId.
+          '404':
+            description: A user with the specified ID was not found.
+          '500':
+            description: Unexpected error.
+            
+  /api/tags/calculate/{userId}:
+      get:
+        summary: Calculate and get vector for current tags by userId
         parameters:
           - in: path
             name: userId
