@@ -40,15 +40,15 @@ paths:
 
   /api/tags/get/{userId}:
       get:
-        summary: Get tags by userId
+        summary: Get vector for current tags by userId
         parameters:
           - in: path
             name: userId
             schema:
               type: string
             required: true
-            description: Id of the user to get tags
-        operationId: getTags
+            description: Id of the user to get current vector
+        operationId: getVector
         responses:
           '200':
             description: Expected response to a valid request
@@ -57,7 +57,8 @@ paths:
                 schema:
                   type: array
                   items:
-                    type: string
+                    type: number
+                    format: double
           '400':
             description: Bad request. Invalid userId.
           '404':
