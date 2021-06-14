@@ -8,7 +8,7 @@ tags:
   - name: Tags controller
 
 paths:
-  /api/tags/add/{userId}:
+  /api/users/{userId}/tags/add:
       put:
         summary: Add tags by userId
         operationId: addTags
@@ -38,7 +38,7 @@ paths:
           '500':
             description: Unexpected error.
   
-  /api/tags/get/{userId}:
+  /api/users/{userId}/tags/get:
       get:
         summary: Get tags by userId
         parameters:
@@ -64,36 +64,8 @@ paths:
             description: A user with the specified ID was not found.
           '500':
             description: Unexpected error.
-            
-  /api/tags/calculate/{userId}:
-      get:
-        summary: Calculate and get vector for current tags by userId
-        parameters:
-          - in: path
-            name: userId
-            schema:
-              type: string
-            required: true
-            description: Id of the user to get current vector
-        operationId: getVector
-        responses:
-          '200':
-            description: Expected response to a valid request
-            content:
-              application/json:
-                schema:
-                  type: array
-                  items:
-                    type: number
-                    format: double
-          '400':
-            description: Bad request. Invalid userId.
-          '404':
-            description: A user with the specified ID was not found.
-          '500':
-            description: Unexpected error.
                   
-  /api/tags/remove/{userId}:
+  /api/users/{userId}/tags/remove:
       post:
         summary: Remove tags by userId
         parameters:
