@@ -1,0 +1,96 @@
+openapi: "3.0.0"
+servers:
+  - url: http://localhost:8080
+info:
+  version: 0.0.1
+  title: Nobis API
+tags:
+  - name: Tags controller
+
+paths:
+  /api/users/{userId}/tags/add:
+      put:
+        summary: Add tags by userId
+        operationId: addTags
+        parameters:
+          - in: path
+            name: userId
+            schema:
+              type: string
+            required: true
+            description: Id of the user to add tags
+        requestBody:
+          description: An array of tags to add
+          required: true
+          content:
+            application/json:
+              schema:
+                  type: array
+                  items:
+                    type: string
+        responses:
+          '200':
+            description: OK
+          '400':
+            description: Bad request. Invalid userId.
+          '404':
+            description: A user with the specified ID was not found.
+          '500':
+            description: Unexpected error.
+  
+  /api/users/{userId}/tags/get:
+      get:
+        summary: Get tags by userId
+        parameters:
+          - in: path
+            name: userId
+            schema:
+              type: string
+            required: true
+            description: Id of the user to get tags
+        operationId: getTags
+        responses:
+          '200':
+            description: Expected response to a valid request
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    type: string
+          '400':
+            description: Bad request. Invalid userId.
+          '404':
+            description: A user with the specified ID was not found.
+          '500':
+            description: Unexpected error.
+                  
+  /api/users/{userId}/tags/remove:
+      post:
+        summary: Remove tags by userId
+        parameters:
+          - in: path
+            name: userId
+            schema:
+              type: string
+            required: true
+            description: Id of the user to remove tags
+        requestBody:
+          description: An array of tags to remove
+          required: true
+          content:
+            application/json:
+              schema:
+                  type: array
+                  items:
+                    type: string
+        operationId: removeTags
+        responses:
+          '200':
+            description: OK
+          '400':
+            description: Bad request. Invalid userId.
+          '404':
+            description: A user with the specified ID was not found.
+          '500':
+            description: Unexpected error.
